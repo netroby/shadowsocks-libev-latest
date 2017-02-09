@@ -1,0 +1,6 @@
+ipset/
+libcork/
+src/
+*.xz
+*.gz
+pkg/

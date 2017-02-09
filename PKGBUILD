@@ -15,29 +15,17 @@ license=('GPL3')
 depends=('libcap' 'mbedtls' 'libsodium' 'libev' 'udns' 'pcre')
 makedepends=('git' 'asciidoc' 'xmlto')
 install=${pkgname}.install
-source=("git+https://github.com/shadowsocks/${pkgname}.git#tag=v$pkgver"
-        "git+https://github.com/shadowsocks/libcork.git"
-        "git+https://github.com/shadowsocks/ipset.git")
+source=("https://github.com/shadowsocks/shadowsocks-libev/releases/download/v${pkgver}/shadowsocks-libev-${pkgver}.tar.gz")
 
-sha512sums=('SKIP'
-        'SKIP'
-        'SKIP')
-
-prepare() {
-    cd "$srcdir"/$pkgname
-        git config submodule.libcork.url "$srcdir"/libcork
-        git config submodule.ipset.url "$srcdir"/libipset
-        git submodule update --init
-}
+sha512sums=('SKIP')
 
 build() {
-    cd "$srcdir/$pkgname"
-        ./autogen.sh
-        ./configure --prefix=/usr --enable-shared --enable-system-shared-lib
+    cd "$srcdir/$pkgname-$pkgver"
+        ./configure --prefix=/usr 
         make
 }
 
 package() {
-    cd "$srcdir/$pkgname"
+    cd "$srcdir/$pkgname-$pkgver"
         make DESTDIR="$pkgdir/" install
 }
