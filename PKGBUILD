@@ -5,7 +5,7 @@
 # Contributor: 4679kun <admin at 4679 dot us>
 # Contributor: ZhiFeng Hu <hufeng1987@gmail.com>
 
-pkgname=shadowsocks-libev
+pkgname=shadowsocks-libev-latest
 pkgver=3.0.3
 pkgrel=1
 pkgdesc='A lightweight secured socks5 proxy for embedded devices and low end boxes'
