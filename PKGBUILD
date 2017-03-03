@@ -6,6 +6,7 @@
 # Contributor: ZhiFeng Hu <hufeng1987@gmail.com>
 
 pkgname=shadowsocks-libev-latest
+shortname=shadowsocks-libev
 pkgver=3.0.3
 pkgrel=1
 pkgdesc='A lightweight secured socks5 proxy for embedded devices and low end boxes'
@@ -20,12 +21,12 @@ source=("https://github.com/shadowsocks/shadowsocks-libev/releases/download/v${p
 sha512sums=('SKIP')
 
 build() {
-    cd "$srcdir/$pkgname-$pkgver"
+    cd "$srcdir/$shortname-$pkgver"
         ./configure --prefix=/usr 
         make
 }
 
 package() {
-    cd "$srcdir/$pkgname-$pkgver"
+    cd "$srcdir/$shortname-$pkgver"
         make DESTDIR="$pkgdir/" install
 }
