@@ -7,7 +7,7 @@
 
 pkgname=shadowsocks-libev-latest
 shortname=shadowsocks-libev
-pkgver=3.0.6
+pkgver=3.0.7
 pkgrel=1
 pkgdesc='A lightweight secured socks5 proxy for embedded devices and low end boxes'
 arch=('i686' 'x86_64')
